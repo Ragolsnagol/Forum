@@ -9,10 +9,6 @@ on:
     pull_request:
         branches: ["main"]
 
-defaults:
-    run:
-        working-directory: ./forum-frontend
-
 jobs:
     build:
         runs-on: ubuntu-latest
@@ -29,5 +25,8 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: "npm"
             - run: npm ci
+              working-directory: ./forum-frontend
             - run: npm run build --if-present
+              working-directory: ./forum-frontend
             - run: npm test
+              working-directory: ./forum-frontend
