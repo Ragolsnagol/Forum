@@ -11,10 +11,13 @@
       "<rootDir>/dist/"
     ],
     "transform": {
-      "^.+\\.ts?$": [ "jest-preset-angular", {
-        "tsconfig": "<rootDir>/tsconfig.spec.json",
-        "stringifyContentPathRegex": "\\.html$"
-      }]
+      "^.+\\.ts?$": [
+        "jest-preset-angular",
+        {
+          "tsconfig": "<rootDir>/tsconfig.spec.json",
+          "stringifyContentPathRegex": "\\.html$"
+        }
+      ]
     }
   },
   "scripts": {
@@ -51,8 +54,11 @@
     "@types/express": "^4.17.17",
     "@types/jest": "^29.5.12",
     "@types/node": "^18.18.0",
+    "autoprefixer": "^10.4.17",
     "jest": "^29.7.0",
     "jest-preset-angular": "^14.0.2",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
     "typescript": "~5.3.2"
   }
 }
