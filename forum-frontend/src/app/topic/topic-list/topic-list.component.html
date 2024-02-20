@@ -1,4 +1,14 @@
-<h1>Topics</h1>
-@for (topic of topics; track $index) {
-    <topic-card [topic]="topic"/>
-}
+<div class="mx-10 my-5">
+    <div class="mt-2 md:flex md:items-center md:justify-between">
+        <div class="min-w-0 flex-1">
+            <h2 class="text-2xl font-bold leading-7 text-white sm:truncate sm:text-3xl sm:tracking-tight">Topics</h2>
+        </div>
+    </div>
+</div>
+
+<ul role="list"
+    class="mx-10 divide-y divide-gray-700 overflow-hidden bg-gray-400 shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl">
+    @for (topic of topics; track $index) {
+        <topic-card [topic]="topic" />
+    }
+</ul>
