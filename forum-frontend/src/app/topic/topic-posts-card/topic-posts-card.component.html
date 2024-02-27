@@ -2,22 +2,20 @@
     <div class="flex min-w-0 gap-x-4">
         <div class="min-w-0 flex-auto">
             <p class="text-sm font-semibold leading-6 text-gray-100">
-                <a [routerLink]="topic.name" 
-                    routerLinkActive="activeHeader"       
-                    ariaCurrentWhenActive="page">
+                <a [routerLink]="post.name" routerLinkActive="activeHeader" ariaCurrentWhenActive="page">
                     <span class="absolute inset-x-0 -top-px bottom-0"></span>
-                    {{topic.name}}
+                    {{post.name}}
                 </a>
             </p>
             <p class="mt-1 flex text-xs leading-5 text-gray-200">
-                topic description here
+                Post description here
             </p>
         </div>
     </div>
     <div class="flex shrink-0 items-center gap-x-4">
         <div class="hidden sm:flex sm:flex-col sm:items-end">
-            <p class="text-sm leading-6 text-gray-100">Most recent thread</p>
-            <p class="mt-1 text-xs leading-5 text-gray-200">Last message <time datetime="2023-01-23T13:23Z">3h
+            <p class="text-sm leading-6 text-gray-100">Most recent comment</p>
+            <p class="mt-1 text-xs leading-5 text-gray-200">Last comment <time datetime="2023-01-23T13:23Z">3h
                     ago</time></p>
         </div>
         <svg class="h-5 w-5 flex-none text-gray-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">

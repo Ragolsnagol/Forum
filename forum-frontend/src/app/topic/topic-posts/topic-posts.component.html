@@ -1,0 +1,14 @@
+<div class="mx-10 my-5">
+    <div class="mt-2 md:flex md:items-center md:justify-between">
+        <div class="min-w-0 flex-1">
+            <h2 class="text-2xl font-bold leading-7 text-white sm:truncate sm:text-3xl sm:tracking-tight">Posts</h2>
+        </div>
+    </div>
+</div>
+
+<ul role="list"
+    class="mx-10 divide-y divide-gray-700 overflow-hidden bg-gray-400 shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl">
+    @for (post of posts; track $index) {
+    <topic-posts-card [post]="post" />
+    }
+</ul>

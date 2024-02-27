@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TopicCardComponent } from '../topic-card/topic-card.component';
 import { TopicService } from '../topic.service';
-import { Topic } from '../../shared/topic';
+import { Topic } from '../../shared/models/topic';
 
 @Component({
   selector: 'topic-list',

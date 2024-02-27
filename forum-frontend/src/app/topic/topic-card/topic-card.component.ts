@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { Topic } from '../../shared/topic';
+import { Topic } from '../../shared/models/topic';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'topic-card',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './topic-card.component.html',
   styleUrl: './topic-card.component.css',
 })
