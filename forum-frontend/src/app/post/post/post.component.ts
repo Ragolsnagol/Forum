@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { PostHeaderComponent } from '../post-header/post-header.component';
 
 @Component({
@@ -8,4 +8,6 @@ import { PostHeaderComponent } from '../post-header/post-header.component';
   templateUrl: './post.component.html',
   styleUrl: './post.component.css',
 })
-export class PostComponent {}
+export default class PostComponent {
+  @Input() postName!: string;
+}
