@@ -4,12 +4,16 @@ import { DashboardPageComponent } from './dashboard/dashboard-page/dashboard-pag
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TopicPostsComponent } from './topic/topic-posts/topic-posts.component';
 import PostComponent from './post/post/post.component';
+import { LoginComponent } from './account/login/login.component';
+import { RegisterComponent } from './account/register/register.component';
 
 export const routes: Routes = [
   { path: 'post/:postName', component: PostComponent },
   { path: 'topics/:topicName', component: TopicPostsComponent },
   { path: 'topics', component: TopicListComponent },
   { path: 'dashboard', component: DashboardPageComponent },
+  { path: 'signin', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
