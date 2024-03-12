@@ -8,6 +8,17 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ForumDb");
 
 // Add services to the container.
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins("http://localhost:4200")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+    });
+});
 builder.Services.AddDbContext<ForumDbContext>(x => x.UseNpgsql(connectionString));
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -18,6 +29,7 @@ builder.Services.AddIdentityApiEndpoints<IdentityUser>()
 
 var app = builder.Build();
 
+app.UseCors();
 app.MapIdentityApi<IdentityUser>();
 app.MapPost("/logout", async (SignInManager<IdentityUser> signInManager, [FromBody] object empty) =>
 {
