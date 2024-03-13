@@ -1,4 +1,6 @@
 using Forum.Data;
+using Forum.Services.Interfaces;
+using Forum.Services.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -26,6 +28,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAuthorization();
 builder.Services.AddIdentityApiEndpoints<IdentityUser>()
     .AddEntityFrameworkStores<ForumDbContext>();
+builder.Services.AddScoped<ITopicService, TopicService>();
 
 var app = builder.Build();
 
