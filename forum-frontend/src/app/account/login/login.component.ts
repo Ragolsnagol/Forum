@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../../shared/authentication/auth.service';
 import { RouterLink } from '@angular/router';
-import { response } from 'express';
 import { AuthResponse } from '../../shared/models/authentication/auth-response';
 import { HttpErrorResponse } from '@angular/common/http';
 
@@ -22,7 +21,6 @@ export class LoginComponent {
   constructor(private authService: AuthService) {}
 
   submitSignin() {
-    console.log(this.loginForm.value);
     this.authService
       .signIn(
         this.loginForm.value.email ?? '',
@@ -31,7 +29,7 @@ export class LoginComponent {
       .subscribe({
         next: (response: AuthResponse) => {
           const token = response.accessToken;
-          localStorage.setItem('jwt', token);
+          localStorage.setItem('token', token);
         },
         error: (err: HttpErrorResponse) => {},
       });

@@ -30,8 +30,8 @@ builder.Services.AddIdentityApiEndpoints<IdentityUser>()
 var app = builder.Build();
 
 app.UseCors();
-app.MapIdentityApi<IdentityUser>();
-app.MapPost("/logout", async (SignInManager<IdentityUser> signInManager, [FromBody] object empty) =>
+app.MapGroup("/account").MapIdentityApi<IdentityUser>();
+app.MapGroup("/account").MapPost("/logout", async (SignInManager<IdentityUser> signInManager, [FromBody] object empty) =>
 {
     if (empty != null)
     {

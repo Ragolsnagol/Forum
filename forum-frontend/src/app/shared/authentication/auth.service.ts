@@ -15,12 +15,12 @@ export class AuthService {
   }
 
   public signIn(email: string, password: string) {
-    const loginUrl = this.baseUrl + '/login';
+    const loginUrl = this.baseUrl + '/account/login';
     return this.http.post<AuthResponse>(loginUrl, { email, password });
   }
 
   public signOut() {
-    const logoutUrl = this.baseUrl + '/logout';
+    const logoutUrl = this.baseUrl + '/account/logout';
 
     return this.http.post(
       logoutUrl,
@@ -34,7 +34,7 @@ export class AuthService {
   }
 
   public register(email: string, password: string) {
-    const registerUrl = this.baseUrl + '/register';
+    const registerUrl = this.baseUrl + '/account/register';
 
     return this.http.post(registerUrl, { email, password });
   }
