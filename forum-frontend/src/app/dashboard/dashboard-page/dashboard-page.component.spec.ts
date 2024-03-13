@@ -9,7 +9,7 @@ describe('DashboardPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DashboardPageComponent, HttpClientTestingModule],
+      imports: [DashboardPageComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(DashboardPageComponent);

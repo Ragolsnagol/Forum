@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TopicPostsComponent } from './topic-posts.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('TopicPostsComponent', () => {
   let component: TopicPostsComponent;
@@ -9,7 +10,11 @@ describe('TopicPostsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TopicPostsComponent, RouterTestingModule],
+      imports: [
+        TopicPostsComponent,
+        RouterTestingModule,
+        HttpClientTestingModule,
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TopicPostsComponent);

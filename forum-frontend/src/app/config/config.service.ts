@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Config } from './config';
+import { Config, ConfigDefault } from './config';
 import { BehaviorSubject, Observable, catchError, map, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ConfigService {
-  private config = new BehaviorSubject<Config>({} as Config);
+  private config = new BehaviorSubject<Config>(ConfigDefault);
   config$: Observable<Config> = this.config.asObservable();
 
   constructor(private http: HttpClient) {}

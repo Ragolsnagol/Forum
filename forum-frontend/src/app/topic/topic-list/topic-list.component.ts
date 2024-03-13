@@ -16,6 +16,8 @@ export class TopicListComponent implements OnInit {
   constructor(private topicService: TopicService) {}
 
   ngOnInit(): void {
-    this.topicService.getTopics().subscribe((topics) => (this.topics = topics));
+    this.topicService.getTopics().subscribe((topics) => {
+      this.topics = topics;
+    });
   }
 }
